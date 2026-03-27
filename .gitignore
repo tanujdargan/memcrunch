@@ -1,0 +1,16 @@
+# Rust
+memcrunch-core/target/
+
+# Xcode
+MemCrunch/MemCrunch.xcodeproj/xcuserdata/
+MemCrunch/MemCrunch.xcodeproj/project.xcworkspace/xcuserdata/
+MemCrunch/build/
+DerivedData/
+
+# macOS
+.DS_Store
+*.swp
+*~
+
+# Claude
+.claude/
