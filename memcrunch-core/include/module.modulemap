@@ -1,0 +1,5 @@
+module CMemCrunchCore {
+    header "memcrunch_core.h"
+    link "memcrunch_core"
+    export *
+}
