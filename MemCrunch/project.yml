@@ -1,0 +1,52 @@
+name: MemCrunch
+options:
+  bundleIdPrefix: com.memcrunch
+  deploymentTarget:
+    macOS: "14.0"
+  xcodeVersion: "16.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    CODE_SIGN_IDENTITY: "-"
+    CODE_SIGN_STYLE: Automatic
+    ENABLE_APP_SANDBOX: NO
+
+targets:
+  MemCrunch:
+    type: application
+    platform: macOS
+    sources:
+      - Sources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.memcrunch.app
+        INFOPLIST_FILE: Resources/Info.plist
+        SWIFT_OBJC_BRIDGING_HEADER: ""
+        LIBRARY_SEARCH_PATHS:
+          - "$(PROJECT_DIR)/../memcrunch-core/target/release"
+        SWIFT_INCLUDE_PATHS:
+          - "$(PROJECT_DIR)/../memcrunch-core/include"
+        OTHER_LDFLAGS:
+          - "-lmemcrunch_core"
+          - "-framework"
+          - "Security"
+          - "-framework"
+          - "SystemConfiguration"
+          - "-framework"
+          - "CoreFoundation"
+        ENABLE_APP_SANDBOX: NO
+        CODE_SIGN_ENTITLEMENTS: Resources/MemCrunch.entitlements
+    preBuildScripts:
+      - name: Build Rust Core
+        script: |
+          cd "${PROJECT_DIR}/../memcrunch-core"
+          cargo build --release
+        basedOnDependencyAnalysis: false
+    entitlements:
+      path: Resources/MemCrunch.entitlements
+      properties:
+        com.apple.security.app-sandbox: false
+        com.apple.security.files.user-selected.read-only: true
