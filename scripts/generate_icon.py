@@ -61,10 +61,9 @@ def generate_icon():
         width=3,
     )
 
-    # Draw a treemap-like pattern
-    # Layout: simulate a squarified treemap with fixed proportions
-    x0, y0 = PAD, PAD + 60  # leave room for text at top
-    w0, h0 = SIZE - PAD * 2, SIZE - PAD * 2 - 60
+    # Draw a treemap-like pattern — pushed down to make room for big text
+    x0, y0 = PAD + 20, PAD + 170
+    w0, h0 = SIZE - PAD * 2 - 40, SIZE - PAD * 2 - 190
 
     # Large block (top-left, ~40% area) — blue
     bw = int(w0 * 0.55)
@@ -90,19 +89,19 @@ def generate_icon():
         draw_treemap_block(draw, cx, row_y, bw2, row_h, col)
         cx += bw2
 
-    # "MC" text at top
+    # "MemCrunch" text — large and readable
     try:
-        font = ImageFont.truetype("/System/Library/Fonts/SFPro-Bold.otf", 72)
+        font = ImageFont.truetype("/System/Library/Fonts/SFPro-Bold.otf", 120)
     except:
         try:
-            font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 72)
+            font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 120)
         except:
             font = ImageFont.load_default()
 
     draw.text(
-        (PAD + 8, PAD - 8),
+        (PAD + 10, PAD + 10),
         "MemCrunch",
-        fill=(255, 255, 255, 220),
+        fill=(255, 255, 255, 230),
         font=font,
     )
 
