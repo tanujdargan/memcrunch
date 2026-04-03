@@ -5,7 +5,7 @@ edition = "2024"
 
 [lib]
 name = "memcrunch_core"
-crate-type = ["staticlib"]
+crate-type = ["staticlib", "cdylib", "rlib"]
 
 [dependencies]
 serde = { version = "1", features = ["derive"] }
