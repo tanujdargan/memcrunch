@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2201B696E315F0330720D789 /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C432E3FB53669168C34376EC /* ScanViewModel.swift */; };
 		47B904932C546460ADEE5AA5 /* FormatHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13A5A270D3CBC5B392B7C07 /* FormatHelpers.swift */; };
+		67FB284A17431A42F85835D8 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0FDCFD48C554C8544DE8F4F2 /* AppIcon.icns */; };
 		6E20B1B988B9153D87C1AB78 /* FileTypePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF96C2F076A26D429E31DCE /* FileTypePanel.swift */; };
 		7BCE96E2A1624D4FED4311FE /* MemCrunchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7345DA9DC703B46CC80D1449 /* MemCrunchApp.swift */; };
 		8D231D432422F665A328A35A /* ScanProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62656CFAA386837605EE6DC /* ScanProgressView.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		00164AC298931C44266D8122 /* RustBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustBridge.swift; sourceTree = "<group>"; };
+		0FDCFD48C554C8544DE8F4F2 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
 		1044B5885CBACA97B0BDC44B /* MemCrunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemCrunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		445D771569989DCFB9B3EA97 /* TreemapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreemapView.swift; sourceTree = "<group>"; };
 		4470B83277E8CF16D0E525DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +39,7 @@
 		12563AC30D7F1547E5C6A53C = {
 			isa = PBXGroup;
 			children = (
+				9DAF1746BC82A1773067DED3 /* Resources */,
 				37DEECB345F10BCA0BECA07D /* Sources */,
 				1F6859072752A4EA12A9E661 /* Products */,
 			);
@@ -78,6 +81,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		9DAF1746BC82A1773067DED3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0FDCFD48C554C8544DE8F4F2 /* AppIcon.icns */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		E902AC55E734C72DBDA16E77 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +127,7 @@
 			buildPhases = (
 				0F41282AC42E8CC1BD56D8F0 /* Build Rust Core */,
 				1B85FCCAA92B4F08A165ABD0 /* Sources */,
+				64426A015871526EF373BF03 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -160,6 +172,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		64426A015871526EF373BF03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67FB284A17431A42F85835D8 /* AppIcon.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		0F41282AC42E8CC1BD56D8F0 /* Build Rust Core */ = {

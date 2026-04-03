@@ -20,6 +20,8 @@ targets:
     platform: macOS
     sources:
       - Sources
+      - path: Resources/AppIcon.icns
+        buildPhase: resources
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.memcrunch.app
