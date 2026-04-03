@@ -1,6 +1,10 @@
-# MemCrunch
+<p align="center">
+  <img src="MemCrunch/Resources/AppIcon.png" width="128" height="128" alt="MemCrunch icon">
+</p>
 
-A fast, native macOS disk space analyzer. Think WinDirStat, but built with SwiftUI and a Rust-powered scanning engine.
+<h1 align="center">MemCrunch</h1>
+
+<p align="center">A fast, native macOS disk space analyzer. Think WinDirStat, but built with SwiftUI and a Rust-powered scanning engine.</p>
 
 ![macOS](https://img.shields.io/badge/macOS-14.0%2B-blue) ![Rust](https://img.shields.io/badge/Rust-1.80%2B-orange) ![Swift](https://img.shields.io/badge/Swift-6.0-red) ![License](https://img.shields.io/badge/license-MIT-green) ![Downloads](https://img.shields.io/github/downloads/tanujdargan/memcrunch/total) ![GitHub release](https://img.shields.io/github/v/release/tanujdargan/memcrunch) ![GitHub stars](https://img.shields.io/github/stars/tanujdargan/memcrunch)
 
