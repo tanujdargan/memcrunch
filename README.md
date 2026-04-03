@@ -2,7 +2,9 @@
 
 A fast, native macOS disk space analyzer. Think WinDirStat, but built with SwiftUI and a Rust-powered scanning engine.
 
-![macOS](https://img.shields.io/badge/macOS-14.0%2B-blue) ![Rust](https://img.shields.io/badge/Rust-1.80%2B-orange) ![Swift](https://img.shields.io/badge/Swift-6.0-red) ![License](https://img.shields.io/badge/license-MIT-green)
+![macOS](https://img.shields.io/badge/macOS-14.0%2B-blue) ![Rust](https://img.shields.io/badge/Rust-1.80%2B-orange) ![Swift](https://img.shields.io/badge/Swift-6.0-red) ![License](https://img.shields.io/badge/license-MIT-green) ![Downloads](https://img.shields.io/github/downloads/tanujdargan/memcrunch/total) ![GitHub release](https://img.shields.io/github/v/release/tanujdargan/memcrunch) ![GitHub stars](https://img.shields.io/github/stars/tanujdargan/memcrunch)
+
+[![Download MemCrunch](https://img.shields.io/badge/Download-MemCrunch%20v0.1.0-blue?style=for-the-badge&logo=apple)](https://github.com/tanujdargan/memcrunch/releases/download/v0.1.0/MemCrunch-0.1.0.dmg)
 
 ## Features
 
@@ -59,7 +61,7 @@ make swift      # builds everything including the app
 
 ## Installing from DMG
 
-Download the latest `.dmg` from [Releases](https://github.com/tanujdargan/memcrunch/releases), open it, and drag MemCrunch to Applications.
+**[Download MemCrunch v0.1.0](https://github.com/tanujdargan/memcrunch/releases/download/v0.1.0/MemCrunch-0.1.0.dmg)** — open the DMG and drag MemCrunch to Applications.
 
 > **Note:** The DMG is ad-hoc signed (not notarized). macOS Gatekeeper will show a warning on first launch. Right-click the app > **Open** to bypass this, or go to System Settings > Privacy & Security and click "Open Anyway."
 
