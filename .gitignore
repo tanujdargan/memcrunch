@@ -14,3 +14,4 @@ DerivedData/
 
 # Claude
 .claude/
+*.dmg
