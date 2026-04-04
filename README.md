@@ -18,20 +18,21 @@
 - **All drive types** — internal SSD, external USB, network shares (SMB/NFS/AFP)
 - **APFS-aware** — correctly handles firmlinks, skips system sub-volumes, no double-counting
 - **Physical disk usage** — reports actual allocated blocks, so sparse files (like Docker.raw) show real consumption
-- **Native UI** — SwiftUI with glass material effects, feels right at home on macOS
+- **Native UI on every platform** — SwiftUI on macOS, WPF on Windows, GTK4 on Linux (coming soon)
 
 ## Architecture
 
+One Rust core, native frontends per platform — no Electron, no web views.
+
 ```
-┌──────────────────────────────┐
-│  SwiftUI App (MemCrunch/)    │
-│  NavigationSplitView, Canvas │
-└──────────────┬───────────────┘
-               │ C FFI (JSON over extern "C")
-┌──────────────▼───────────────┐
-│  Rust Core (memcrunch-core/) │
-│  jwalk, indextree, treemap   │
-└──────────────────────────────┘
+┌────────────────┐  ┌──────────────┐  ┌──────────────┐
+│  SwiftUI (mac) │  │  WPF (win)   │  │  GTK4 (linux)│
+└───────┬────────┘  └──────┬───────┘  └──────┬───────┘
+        │ C FFI            │ P/Invoke         │ Rust
+┌───────▼──────────────────▼──────────────────▼───────┐
+│              Rust Core (memcrunch-core/)             │
+│              jwalk, indextree, treemap               │
+└─────────────────────────────────────────────────────┘
 ```
 
 The Rust core compiles to a static library. Swift calls it through a thin C FFI layer — complex data crosses the boundary as JSON strings. Zero code generation, fully debuggable.
@@ -73,10 +74,18 @@ make swift      # builds everything including the app
 
 MemCrunch works without Full Disk Access, but some system directories will be skipped. For a complete scan, grant access in **System Settings > Privacy & Security > Full Disk Access**.
 
+## Platform Support
+
+| Platform | UI Framework | Status |
+|----------|-------------|--------|
+| macOS 14+ | SwiftUI | Available |
+| Windows 10/11 | WPF (.NET 8) | Available |
+| Linux | GTK4-rs | Coming soon |
+
 ## Coming Soon
 
-- **Cross-platform support** — Windows and Linux builds using the same Rust core with native UI frontends
-- Notarized and Developer ID signed releases
+- Native Linux app (GTK4-rs)
+- Notarized macOS releases
 - Delete files directly from the treemap
 - Search and filter by file name or extension
 
